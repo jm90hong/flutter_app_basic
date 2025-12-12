@@ -6,7 +6,9 @@ import 'package:provider/provider.dart';
 import 'package:my_app1/providers/todo_provider.dart';
 
 class TodoScreen extends StatefulWidget {
-  const TodoScreen({super.key});
+  int id;
+
+  TodoScreen({required this.id});
 
   @override
   State<TodoScreen> createState() => _TodoScreenState();
@@ -19,7 +21,7 @@ class _TodoScreenState extends State<TodoScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Provider.of<TodoProvider>(context, listen: false).fetchTodo(2);
+    Provider.of<TodoProvider>(context, listen: false).fetchTodo(widget.id);
   }
 
   @override
