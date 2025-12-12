@@ -8,6 +8,7 @@ class TodoProvider extends ChangeNotifier {
   List<Todo> todoList = [];
 
   Future<void> fetchTodo(int id) async {
+    todo = null;
     var response = await http.get(
       Uri.parse('https://jsonplaceholder.typicode.com/todos/$id'),
     );
